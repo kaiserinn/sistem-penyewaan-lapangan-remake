@@ -1,0 +1,8 @@
+# Dependency directory
+node_modules
+
+# Keep environment variables out of version control
+.env
+
+# Ignore the built output
+dist/**/*

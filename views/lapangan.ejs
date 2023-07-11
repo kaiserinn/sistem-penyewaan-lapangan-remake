@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uncensored Furry</title>
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/sidebar.css">
+</head>
+
+<body>
+
+    <%- include('./partials/sidebar') %>
+
+    <main class="main_content">
+        <%- include('./partials/header') %>
+
+        <% if (lapangan.length > 0) { %>
+            <% lapangan.forEach(lapangan => { %>
+            <div class="lapangan_item">
+                <h1 class="lapangan_item__header"><%= lapangan.name %></h1>
+                <p>Rp. <%= lapangan.price %></p>
+                <form action="/lapangan/add" class="form">
+                    <input type="date" name="date" required>
+                    <select name="sesi" required>
+                        <option value="lapangan 1">lapangan 1</option>
+                        <option value="lapangan 2">lapangan 2</option>
+                        <option value="lapangan 3">lapangan 3</option>
+                    </select>
+                    <input type="submit" value="Sewa Lapangan" class="submit_button">
+                </form>
+            </div>
+            <% }) %>
+        <% } %>
+    </main>
+
+</body>
+
+</html>
