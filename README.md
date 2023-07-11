@@ -1,6 +1,6 @@
 # Sistem Penyewaan Lapangan Remake
 
-Repositori ini berisi remake dari tugas besar mata kuliah Pemrograman Berorientasi Objek yang sebelumnya merupakan aplikasi desktop berbasis Java. Remake ini dilakukan dalam lingkup web menggunakan node.js.
+Repositori ini berisi remake dari tugas besar mata kuliah Pemrograman Berorientasi Objek yang sebelumnya merupakan aplikasi desktop berbasis Java. Remake ini dilakukan dalam lingkup web menggunakan `node.js`.
 
 ## Deskripsi
 
