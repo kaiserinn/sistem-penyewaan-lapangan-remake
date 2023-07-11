@@ -22,24 +22,24 @@ Proyek remake ini membangun dari proyek asli dengan menambahkan perbaikan, melak
 | express        | ^4.18.2 | Web application framework for Node.js                             |
 | prisma         | ^4.16.2 | Prisma CLI for database schema management and migrations          |
 
-# Penggunaan
+## Penggunaan
 
 <br>
 
 - Clone repositori
 
-```shell
+```
 git clone --depth=1 https://github.com/kaiserinn/sistem-penyewaan-lapangan-remake.git <project_name>
 ```
 
 - Masuk ke direktori proyek
 
-```shell
+```
 cd <project_name>
 ```
 
 - Install dependensi
 
-```shell
+```
 npm install
 ```
