@@ -3,9 +3,9 @@ import lapanganController from '../controllers/lapanganController';
 
 const router = express.Router();
 
-router.get('/lapangan', lapanganController.getLapangan);
+router.get('/', lapanganController.getLapangan);
 
-router.get('/lapangan/add', (req, res) => {
+router.get('/add', (req, res) => {
   res.render('add-lapangan');
 });
 
