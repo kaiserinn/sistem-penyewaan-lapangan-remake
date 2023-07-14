@@ -8,13 +8,18 @@ Proyek remake ini membangun dari proyek asli dengan menambahkan perbaikan, melak
 
 ## Prasyarat
 
-| NPM Package    | Version | Description                                                       |
-| -------------- | ------- | ----------------------------------------------------------------- |
-| @prisma/client | ^4.16.2 | Prisma client library for database access and query generation    |
-| dotenv         | ^16.3.1 | Library for initializing environment variables from a .env file   |
-| ejs            | ^3.1.9  | Embedded JavaScript templating engine for generating dynamic HTML |
-| express        | ^4.18.2 | Web application framework for Node.js                             |
-| prisma         | ^4.16.2 | Prisma CLI for database schema management and migrations          |
+| Dependency      | Version | Description                                                  |
+| --------------- | ------- | ------------------------------------------------------------ |
+| @prisma/client  | ^4.16.2 | Prisma client for database operations                        |
+| bcrypt          | ^5.1.0  | Password hashing library                                     |
+| dotenv          | ^16.3.1 | Loads environment variables from a file                      |
+| ejs             | ^3.1.9  | Embedded JavaScript templating engine                        |
+| express         | ^4.18.2 | Web application framework for Node.js                        |
+| express-flash   | ^0.0.2  | Flash message middleware for Express                         |
+| express-session | ^1.17.3 | Session middleware for Express                               |
+| passport        | ^0.6.0  | Authentication middleware for Node.js                        |
+| passport-local  | ^1.0.0  | Passport strategy for local username/password authentication |
+| prisma          | ^4.16.2 | Database toolkit for Node.js and TypeScript                  |
 
 ## Penggunaan
 
