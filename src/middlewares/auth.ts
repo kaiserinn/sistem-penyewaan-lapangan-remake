@@ -1,31 +1,19 @@
-import type express from 'express';
+import type { Request, Response, NextFunction } from 'express';
 
-const checkAuthenticated = (
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction
-): void => {
+const checkAuthenticated = (req: Request, res: Response, next: NextFunction): void => {
   if (req.isAuthenticated()) {
     next();
     return;
   }
-
   res.redirect('/users/login');
 };
 
-const checkNotAuthenticated = (
-  req: express.Request,
-  res: express.Response,
-  next: express.NextFunction
-): void => {
-  if (req.isAuthenticated()) {
-    res.redirect('/');
+const checkNotAuthenticated = (req: Request, res: Response, next: NextFunction): void => {
+  if (!req.isAuthenticated()) {
+    next();
     return;
   }
-  next();
+  res.redirect('/');
 };
 
-export default {
-  checkAuthenticated,
-  checkNotAuthenticated,
-};
+export default { checkAuthenticated, checkNotAuthenticated };

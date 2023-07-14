@@ -13,7 +13,6 @@ export default (passport: PassportStatic): any => {
       });
 
       if (!account) {
-        console.log('username not found!');
         done(null, false, { message: 'Username not found!' });
         return;
       }
@@ -22,7 +21,6 @@ export default (passport: PassportStatic): any => {
       if (match) {
         done(null, account);
       } else {
-        console.log('Wrong password');
         done(null, false, { message: 'Wrong password' });
       }
     })

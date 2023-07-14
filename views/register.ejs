@@ -9,7 +9,18 @@
 
   <body>
     <form class="container" method="POST" action="/users/register">
-      <h1>REGISTER</h1>
+      <h1 class="form-title">Register Page</h1>
+
+      <% if (flash) { %>
+        <% Object.entries(flash).forEach(([key, value]) => { %>
+          <% if (key === 'error') { %>
+            <div class="error"><%= value %></div>
+          <% } else { %>
+            <div class="success"><%= value %></div>
+          <% } %>
+        <% }) %>
+      <% } %>
+      
       <div class="input-container">
         <label for="username" class="input-label">Username</label>
         <input

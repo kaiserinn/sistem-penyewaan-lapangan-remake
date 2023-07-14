@@ -9,7 +9,22 @@
 
   <body>
     <form class="container" method="POST" action="/users/login">
-      <h1>LOGIN</h1>
+      <h1 class="form-title">Login Page</h1>
+
+      <% if (messages.error) { %>
+      <div class="error"><%= messages.error %></div>
+      <% } %>
+
+      <% if (flash) { %>
+        <% Object.entries(flash).forEach(([key, value]) => { %>
+          <% if (key === 'error') { %>
+            <div class="error"><%= value %></div>
+          <% } else { %>
+            <div class="success"><%= value %></div>
+          <% } %>
+        <% }) %>
+      <% } %>
+
       <div class="input-container">
         <label for="username" class="input-label">Masukkan Username</label>
         <input
@@ -32,7 +47,8 @@
           required
         />
       </div>
-      <button id="login" class="button">Sign In</button>
+      <button type="submit" id="login" class="button">Sign In</button>
+      <a href="/users/register" id="register" class="button">Register</a>
     </form>
   </body>
 </html>

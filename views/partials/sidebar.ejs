@@ -1,6 +1,6 @@
 <aside class="sidebar">
     <div class="sidebar__header">
-        <h1 class="sidebar__title">Uncensored Furry</h1>
+        <h1 class="sidebar__title">SIPL</h1>
     </div>
     <hr>
     <div class="sidebar__content">
@@ -18,10 +18,10 @@
         </a>
     </div>
     <hr>
-    <div class="sidebar__footer">
-        <a href="/logout" class="sidebar__link">
+    <form class="sidebar__footer" action="/users/logout" method="POST">
+        <button type="submit" class="sidebar__link">
             <svg class="svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round"d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" /></svg>
-            Logout
-        </a>
-    </div>
+            Log Out
+        </button>
+    </form>
 </aside>

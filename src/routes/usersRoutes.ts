@@ -4,16 +4,10 @@ import auth from '../middlewares/auth';
 
 const router = express.Router();
 
-router.get('/login', auth.checkNotAuthenticated, (req, res) => {
-  res.render('login');
-});
-
-router.post('/login', auth.checkNotAuthenticated, usersController.login);
-
-router.get('/register', (req, res) => {
-  res.render('register');
-});
-
+router.get('/login', auth.checkNotAuthenticated, usersController.getLogin);
+router.post('/login', usersController.login);
+router.get('/register', auth.checkNotAuthenticated, usersController.getRegister);
 router.post('/register', usersController.register);
+router.post('/logout', usersController.logout);
 
 export default router;
