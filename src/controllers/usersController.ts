@@ -2,6 +2,7 @@ import passport from 'passport';
 import { PrismaClient } from '@prisma/client';
 import type { NextFunction, Request, Response } from 'express';
 import bcrypt from 'bcrypt';
+import { body, validationResult } from 'express-validator';
 
 const prisma = new PrismaClient();
 
@@ -14,6 +15,26 @@ const login = async (req: Request, res: Response, next: NextFunction): Promise<v
 };
 
 const register = async (req: Request, res: Response): Promise<void> => {
+  await body('username').isLength({ min: 3 }).withMessage('Username minimal 3 karakter').run(req);
+  await body('password')
+    .isStrongPassword()
+    .withMessage(
+      'Password minimal 8 karakter dan harus memiliki setidaknya 1 huruf kecil, huruf besar, dan angka'
+    )
+    .run(req);
+  await body('email').isEmail().withMessage('Email tidak valid').run(req);
+
+  const valResult = validationResult(req);
+  if (!valResult.isEmpty()) {
+    const errors = valResult.array();
+    req.flash(
+      'error',
+      errors.map((err) => err.msg)
+    );
+    res.redirect('/users/register');
+    return;
+  }
+
   const { username, password, displayName, email } = req.body;
   const account = await prisma.account.findUnique({
     where: { username },
