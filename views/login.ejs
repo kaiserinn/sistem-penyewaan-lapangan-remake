@@ -12,18 +12,14 @@
       <h1 class="form-title">Login Page</h1>
 
       <% if (messages.error) { %>
-      <div class="error"><%= messages.error %></div>
+        <div class="error"><%= messages.error %></div>
       <% } %>
 
-      <% if (flash) { %>
-        <% Object.entries(flash).forEach(([key, value]) => { %>
-          <% if (key === 'error') { %>
-            <div class="error"><%= value %></div>
-          <% } else { %>
-            <div class="success"><%= value %></div>
-          <% } %>
+      <% Object.entries(flash).forEach(([key, value]) => { %>
+        <% value.forEach(val => { %>
+          <div class="<%= key === 'error' ? 'error' : 'success' %>"><%= val %></div>
         <% }) %>
-      <% } %>
+      <% }) %>
 
       <div class="input-container">
         <label for="username" class="input-label">Masukkan Username</label>
@@ -48,7 +44,10 @@
         />
       </div>
       <button type="submit" id="login" class="button">Sign In</button>
-      <a href="/users/register" id="register" class="button">Register</a>
+      <p class="link">
+        Don't have an account? 
+        <a href="/users/register">Register</a>
+      </p>
     </form>
   </body>
 </html>
