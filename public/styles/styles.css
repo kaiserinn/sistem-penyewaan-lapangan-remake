@@ -49,7 +49,10 @@ body {
   margin-top: 20px;
   font-size: 16px;
   padding: 5px;
-  /* border-radius: 20px; */
+}
+
+.link {
+  margin-top: 20px;
 }
 
 .error {
